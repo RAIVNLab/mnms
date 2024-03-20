@@ -14,13 +14,12 @@ This dataset contains 4K+ multi-step multi-modal tasks involving 33 tools that i
 Code coming soon!
 
 ## Citation
+Please cite us if you find our work helpful!
 ```
-@misc{ma2024mms,
-      title={m&m's: A Benchmark to Evaluate Tool-Use for multi-step multi-modal Tasks}, 
-      author={Zixian Ma and Weikai Huang and Jieyu Zhang and Tanmay Gupta and Ranjay Krishna},
-      year={2024},
-      eprint={2403.11085},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@article{ma2024mms,
+  title={m&m's: A Benchmark to Evaluate Tool-Use for multi-step multi-modal Tasks}, 
+  author={Zixian Ma and Weikai Huang and Jieyu Zhang and Tanmay Gupta and Ranjay Krishna},
+  year={2024},
+  journal={arXiv preprint arXiv:2403.11085},
 }
 ```
