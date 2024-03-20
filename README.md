@@ -14,4 +14,13 @@ This dataset contains 4K+ multi-step multi-modal tasks involving 33 tools that i
 Code coming soon!
 
 ## Citation
-TODO
+```
+@misc{ma2024mms,
+      title={m&m's: A Benchmark to Evaluate Tool-Use for multi-step multi-modal Tasks}, 
+      author={Zixian Ma and Weikai Huang and Jieyu Zhang and Tanmay Gupta and Ranjay Krishna},
+      year={2024},
+      eprint={2403.11085},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
