@@ -780,10 +780,12 @@ def love_calculator(first_name: str, second_name: str, ckpt=None):
 
 def get_location(city: str, ckpt=None):
     url = "https://nominatim.openstreetmap.org/search"
+    headers = {
+        'User-Agent': 'm&ms'
+    }
     params = {"q": city, "format": "json"}
-    response = requests.get(url, params=params)
+    response = requests.get(url, params=params, headers=headers)
     result_formatted = response.json()[0]
-
     return result_formatted
 
 
