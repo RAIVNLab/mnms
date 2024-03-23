@@ -10,8 +10,38 @@ This dataset contains 4K+ multi-step multi-modal tasks involving 33 tools that i
 ## Dataset generation
 <img src="dataset_gen.png">
 
+## Installation
+Please make sure you install all the required packages in ```requirements.txt``` by running:
+```
+pip install -r requirements.txt
+```
+
 ## Evaluation
-Code coming soon!
+To evaluate the predicted plans against the groundtruth plans in m&ms, simply run this line:
+```
+python -m evaluation.run --output-csv <output.csv> --plan-format json --preds-file <predictions.json>
+```
+Note that our code works with a ```predictions.json``` file where each line is a dictionary containing "id" and "prediction" like the example below:
+```
+{"id": 10, "prediction": [{"id": 0, "name": "text classification", "args": {"text": "forced, familiar and thoroughly condescending."}}]}
+{"id": 24, "prediction": [{"id": 0, "name": "text generation", "args": {"text": "Who exactly became the King of the Canary Islands?"}}]}
+...
+```
+
+But you are welcome to modify it to work with other file formats. 
+
+## Execution
+
+To execute the groundtruth plans, you can run this line:
+```
+HUGGINGFACE_HUB_CACHE=<cache_dir> RAPID_API_KEY=<rapid_api_key> OMDB_API_KEY=<omdb_api_key> OPENAI_API_KEY=<openai_api_key> python -m execution.run --plan-format code
+```
+You can generate your own API keys on [Rapid](https://rapidapi.com/), [OMDb](https://www.omdbapi.com/), and [OpenAI](https://openai.com/).
+
+To execute predicted plans, you will need to additionally provide a ```predictions.json``` file like this:
+```
+python -m execution.run --input-file <predictions.json> --plan-format json
+```
 
 ## Citation
 Please cite us if you find our work helpful!
