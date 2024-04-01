@@ -1,5 +1,7 @@
-# m&ms
-m&ms is a benchmark for evaluating large language model (LLM) agents' tool-use abilities on multi-step multi-modal tasks. You can find the evaluation dataset on [HuggingFace](https://huggingface.co/datasets/zixianma/mms).
+# m&m's: A Benchmark to Evaluate Tool-Use Agents for multi-step multi-modal Tasks
+[**🌐 Website**](https://mnms-project.github.io/) | [**🤗 Dataset**](https://huggingface.co/datasets/zixianma/mms) | [**📖 Paper**](https://arxiv.org/abs/2403.11085) 
+
+m&ms is a benchmark for evaluating large language model (LLM) agents' tool-use abilities on multi-step multi-modal tasks.
 
 ## Dataset examples
 <img src="figures/dataset_examples.png">
