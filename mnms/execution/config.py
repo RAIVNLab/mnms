@@ -20,9 +20,9 @@ MODEL_SELECTION = {
     "optical_character_recognition": "easyOCR"
 }
 
-DATA_PATH = "execution/data"
+DATA_PATH = "mnms/execution/data"
 
-RESULT_PATH = "execution/results"
+RESULT_PATH = "mnms/execution/results"
 
 CACHE_ROOT_PATH = "/gscratch/krishna/zixianma"
 

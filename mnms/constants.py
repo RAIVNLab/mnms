@@ -561,3 +561,57 @@ TOOL_METADATA = {
       "category": "public api"
     },
 }
+
+DEMO_EXAMPLES = [
+    {
+        "id": 8, 
+        "nodes": [
+            {"id": 0, "name": "text generation", "args": {"text": "an extended paragraph on the topic: Would you rather have an Apple Watch - or a BABY?"}}, 
+            ], 
+            "user_request": "\"Based on reading the article titled 'Would you rather have an Apple Watch - or a BABY?', generate an extended paragraph on the topic.\""
+        },
+    {
+        "id": 28, 
+        "nodes": [
+            {"id": 0, "name": "image editing", "args": {"image": "17320.jpg", "prompt": "change the green ball to blue"}}, 
+            {"id": 1, "name": "image captioning", "args": {"image": "<node-0>.image"}}
+            ], 
+        "user_request": "\"Could you take the image, specifically 'image 17320.jpg', and adjust it so the green ball in the picture becomes blue, then describe for me what the resulting image looks like?\""
+    },
+    {
+    "id": 36, 
+    "nodes": [
+        {"id": 0, "name": "automatic speech recognition", "args": {"audio": "1995-1826-0002.flac"}}, 
+        {"id": 1, "name": "text summarization", "args": {"text": "<node-0>.text"}},
+        {"id": 2, "name": "image generation", "args": {"text": "a vivid illustration based on <node-1>.text"}, },
+    ], 
+    "user_request": "\"Could you provide a brief summary of the key points discussed in the audio file '1995-1826-0002.flac' about John Taylor and his interest in cotton? And then, can you also help me create a vivid illustration based on the key points?\""
+    }
+]
+
+REACT_DEMO_EXAMPLES = [
+    {
+        "id": 8, 
+        "nodes": [
+            {"id": 0, "name": "text generation", "args": {"text": "Would you rather have an Apple Watch - or a BABY?"}, "output": {"text": "An Apple Watch is an accessory to a smartphone. A baby is a human life, representing a significant long-term commitment and a profound emotional investment. These choices are fundamentally different and depend on individual circumstances, priorities, and stages in life..."}}, 
+            ], 
+            "user_request": "\"Based on reading the article titled 'Would you rather have an Apple Watch - or a BABY?', generate an extended paragraph on the topic.\""
+        },
+    {
+        "id": 28, 
+        "nodes": [
+            {"id": 0, "name": "image editing", "args": {"image": "17320.jpg", "prompt": "change the green ball to blue"}, "output": {"image": "an image with a blue ball in it"}}, 
+            {"id": 1, "name": "image captioning", "args": {"image": "<node-0>.image"}}
+            ], 
+        "user_request": "\"Could you take the image, specifically 'image 17320.jpg', and adjust it so the green ball in the picture becomes blue, then describe for me what the resulting image looks like?\""
+    },
+    {
+    "id": 36, 
+    "nodes": [
+        {"id": 0, "name": "automatic speech recognition", "args": {"audio": "1995-1826-0002.flac"}, "output": {"text": "John Taylor, who had supported her through college, was interested in cotton."}}, 
+        {"id": 1, "name": "text summarization", "args": {"text": "<node-0>.text"}, "output": {"text": "John Taylor was interested in cotton."}},
+        {"id": 2, "name": "image generation", "args": {"text": "a vivid illustration based on <node-1>.text"}, },
+    ], 
+    "user_request": "\"Could you provide a brief summary of the key points discussed in the audio file '1995-1826-0002.flac' about John Taylor and his interest in cotton? And then, can you also help me create a vivid illustration based on the key points?\""
+    }
+]

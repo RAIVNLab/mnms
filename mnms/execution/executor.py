@@ -7,7 +7,7 @@ class Executor:
     def __init__(
         self, 
         save_result: bool = True, 
-        log_obs: bool =True, 
+        log_obs: bool = True, 
         result_folder: str = RESULT_PATH
     ) -> None:
         self.save_result = save_result
@@ -40,16 +40,16 @@ class Executor:
         except Exception as err:
             return {'status': False, 'message': f"Execution failed with {type(err)}: {err}."}
 
-class CodeExecutor:
+
+
+class CodeExecutor(Executor):
     def __init__(
         self, 
         save_result: bool = True, 
-        log_obs: bool =True, 
+        log_obs: bool = True, 
         result_folder: str = RESULT_PATH
-    ) -> None:
-        self.save_result = save_result
-        self.log_obs = log_obs
-        self.result_folder = result_folder
+        ):
+        super().__init__(save_result, log_obs, result_folder)
 
     def save_result_as_pickle(self, task_id, result):
         full_result_path = os.path.join(self.result_folder, str(task_id))
@@ -72,7 +72,7 @@ class CodeExecutor:
                 return {'status': False, 'message': "Code snippet contains input() or stdin function, which is not supported."}
         
             import_lib = "import json\n"
-            import_lib += "from execution.tool_api import *\n"""
+            import_lib += "from mnms.execution.tool_api import *\n"""
 
             final_code = import_lib + code_snippet
             print(final_code)
@@ -99,7 +99,7 @@ class CodeExecutor:
                 return {'status': True, 'message': f"Execution succeeded."}
         except Exception as err:
             return {'status': False, 'message': f"Execution failed with {type(err)}: {err}."}
-        
-       
+
+
 
         

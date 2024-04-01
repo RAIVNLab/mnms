@@ -86,7 +86,6 @@ def text_generation(text: str, ckpt=MODEL_SELECTION["text_generation"]):
         max_tokens=300,
     )
     result_formatted = {"text": response.choices[0].message.content}
-    print(result_formatted)
 
     return result_formatted
 

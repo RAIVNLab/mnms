@@ -5,7 +5,7 @@ import pandas as pd
 from typing import Any, Dict, List, Literal, Tuple
 from functools import partial
 from .metrics import PlanAccMetrics, PRFMetrics, EditDistMetrics
-from constants import TOOL_METADATA
+from mnms.constants import TOOL_METADATA
 
 def find_best_match(gt_code_list: List[str], pred_code: str):
     """
@@ -46,6 +46,13 @@ def replace_node_with_placeholder(text):
 def nodes_to_code(nodes):
     """
     Turns the json-format nodes into python code lines (without the solve() header and output used in code_str)
+    Example:
+    Input:
+    [{"id": 0, "name": "image captioning", "args": {"image": "2327921.jpg"}}, 
+    {"id": 1, "name": "text summarization", "args": {"text": output0["text"]}}]
+    Output:
+    output0 = image_captioning(image="2327921.jpg")
+    output1 = text_summarization(text=output0['text'])
     """
     assert isinstance(nodes, list), f"nodes is of type {type(nodes)} but expected list"
 
