@@ -11,6 +11,10 @@ This dataset contains 4K+ multi-step multi-modal tasks involving 33 tools that i
 <p align="center">
   <img src="figures/dataset_stats.png" width="500px">
 </p>
+And a table listing all 33 available tools in our tool API:
+<p align="center">
+  <img src="figures/all_tools.png" width="800px">
+</p>
 
 
 
