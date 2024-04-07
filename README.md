@@ -50,7 +50,11 @@ To run planning experiments on m&ms with LLM agents, below is an example command
 ```
 python -m mnms.run_plan_agent  --action-format json --plan-mode multi-step --model gemini-pro --max-reply 10 --verify --execute --exp-id 0331 
 ```
-where ```action-format``` specifies the output format of the LLM agent i.e. ```json``` or ```code```; ```plan-mode``` refers to the planning strategy ```multi-step``` or ```step-by-step```; ```max-reply``` is the max number of turns the LLM agent can take to refine its initial plan (```max-reply=0``` means no iterative refinement); ```verifiy``` and ```execute``` specify whether to turn on verification and execution feedback during planning. 
+where the arguments:
+- ```action-format``` specifies the output format of the LLM agent i.e. ```json``` or ```code```;
+- ```plan-mode``` refers to the planning strategy ```multi-step``` or ```step-by-step```;
+- ```max-reply``` is the max number of turns the LLM agent can take to refine its initial plan (```max-reply=0``` means no iterative refinement);
+- ```verifiy``` and ```execute``` specify whether to turn on verification and execution feedback during planning.
 
 Additionally, you can also run experiments on your own queries by adding ```--input-file <your_input_file>```, where each example is expected to contain ```id``` and ```user_request```.
 
@@ -83,7 +87,7 @@ python -m mnms.execution.run --plan-format json --input-file <predictions.json>
 ```
 
 ## Citation
-Please cite us if you find our work helpful!
+If you find our work helpful, please consider starring our repo or citing our paper. Thanks!
 ```
 @article{ma2024mms,
   title={m&m's: A Benchmark to Evaluate Tool-Use for multi-step multi-modal Tasks}, 
