@@ -58,6 +58,18 @@ where the arguments:
 
 Additionally, you can also run experiments on your own queries by adding ```--input-file <your_input_file>```, where each example is expected to contain ```id``` and ```user_request```.
 
+## Execution
+
+To execute the groundtruth plans, you can run this line:
+```
+python -m mnms.execution.run --plan-format code
+```
+
+
+To execute predicted plans, you will need to additionally provide a ```predictions.json``` file like this:
+```
+python -m mnms.execution.run --plan-format json --input-file <predictions.json>
+```
 
 ## Evaluation
 To evaluate the predicted plans against the groundtruth plans in m&ms, simply run this line:
@@ -73,26 +85,19 @@ Note that our code works with a ```predictions.json``` file where each line is a
 
 But you are welcome to modify it to work with other file formats. 
 
-## Execution
-
-To execute the groundtruth plans, you can run this line:
+To evaluate the final execution results against the groundtruth results in m&ms for selected tasks, first download the groundtruth execution results from [here](https://huggingface.co/datasets/zixianma/mnms_exec_results/blob/main/gt_results.zip) and unzip it into ```<gt_results_dir>```. Then, run this line:
 ```
-python -m mnms.execution.run --plan-format code
+python -m mnms.evaluation.run_final_result_eval --gt-dir <gt_results_dir>  --pred-dir <pred_results_dir> --output-csv <output.csv> 
 ```
 
-
-To execute predicted plans, you will need to additionally provide a ```predictions.json``` file like this:
-```
-python -m mnms.execution.run --plan-format json --input-file <predictions.json>
-```
 
 ## Citation
-If you find our work helpful, please consider starring our repo or citing our paper. Thanks!
+If you find our work helpful, please consider starring our repo and citing our paper. Thanks!
 ```
 @article{ma2024mms,
   title={m&m's: A Benchmark to Evaluate Tool-Use for multi-step multi-modal Tasks}, 
   author={Zixian Ma and Weikai Huang and Jieyu Zhang and Tanmay Gupta and Ranjay Krishna},
   year={2024},
-  journal={arXiv preprint arXiv:2403.11085},
+  journal={EECV 2024},
 }
 ```
