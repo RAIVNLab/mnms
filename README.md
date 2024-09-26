@@ -1,5 +1,7 @@
-# m&ms
-m&ms is a benchmark for evaluating large language model (LLM) agents' tool-use abilities on multi-step multi-modal tasks. You can find the evaluation dataset on [HuggingFace](https://huggingface.co/datasets/zixianma/mms).
+# m&m's: A Benchmark to Evaluate Tool-Use Agents for multi-step multi-modal Tasks
+[**🌐 Website**](https://mnms-project.github.io/) | [**🤗 Dataset**](https://huggingface.co/datasets/zixianma/mms) | [**📖 Paper**](https://arxiv.org/abs/2403.11085) 
+
+m&ms is a benchmark for evaluating large language model (LLM) agents' tool-use abilities on multi-step multi-modal tasks.
 
 ## Dataset examples
 <img src="figures/dataset_examples.png">
@@ -8,6 +10,10 @@ m&ms is a benchmark for evaluating large language model (LLM) agents' tool-use a
 This dataset contains 4K+ multi-step multi-modal tasks involving 33 tools that include 13 multi-modal models, 9 (free) public APIs, and 11 image processing modules. For each of these task queries, we provide automatically generated plans using this realistic toolset. We further provide a high-quality subset of 1,565 human-verified task plans and 882 human-verified, filtered, and correctly executable plans. Below is a table summarizing the statistics of m&ms:
 <p align="center">
   <img src="figures/dataset_stats.png" width="500px">
+</p>
+And a table listing all 33 available tools in our tool API:
+<p align="center">
+  <img src="figures/all_tools.png" width="800px">
 </p>
 
 
@@ -44,7 +50,11 @@ To run planning experiments on m&ms with LLM agents, below is an example command
 ```
 python -m mnms.run_plan_agent  --action-format json --plan-mode multi-step --model gemini-pro --max-reply 10 --verify --execute --exp-id 0331 
 ```
-where ```action-format``` specifies the output format of the LLM agent i.e. ```json``` or ```code```; ```plan-mode``` refers to the planning strategy ```multi-step``` or ```step-by-step```; ```max-reply``` is the max number of turns the LLM agent can take to refine its initial plan (```max-reply=0``` means no iterative refinement); ```verifiy``` and ```execute``` specify whether to turn on verification and execution feedback during planning. 
+where the arguments:
+- ```action-format``` specifies the output format of the LLM agent i.e. ```json``` or ```code```;
+- ```plan-mode``` refers to the planning strategy ```multi-step``` or ```step-by-step```;
+- ```max-reply``` is the max number of turns the LLM agent can take to refine its initial plan (```max-reply=0``` means no iterative refinement);
+- ```verifiy``` and ```execute``` specify whether to turn on verification and execution feedback during planning.
 
 Additionally, you can also run experiments on your own queries by adding ```--input-file <your_input_file>```, where each example is expected to contain ```id``` and ```user_request```.
 
@@ -77,7 +87,7 @@ python -m mnms.execution.run --plan-format json --input-file <predictions.json>
 ```
 
 ## Citation
-Please cite us if you find our work helpful!
+If you find our work helpful, please consider starring our repo or citing our paper. Thanks!
 ```
 @article{ma2024mms,
   title={m&m's: A Benchmark to Evaluate Tool-Use for multi-step multi-modal Tasks}, 
