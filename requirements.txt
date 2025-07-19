@@ -10,7 +10,7 @@ openai==1.14.3
 opencv_python_headless==4.9.0.80
 pandas==2.2.1
 Pillow==10.2.0
-pyautogen==0.2.11
+ag2==0.2.11
 python_dateutil==2.8.2
 python_Levenshtein==0.25.0
 Requests==2.31.0
